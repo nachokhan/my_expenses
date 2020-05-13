@@ -1,4 +1,4 @@
-# my_expenses
+# My Expenses
 
 A little expenses's management app to learn more flutter/dart and improve my 
 skills. As always you are welcome to use this code, make questions or suggestions
