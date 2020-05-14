@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import './widgets/w_transaction_list.dart';
-import './widgets/w_transaction_input.dart';
+import './widgets/w_joiner.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,8 +32,7 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-          WTransactionInput(),
-          WTransactionList(),
+          WJoiner(),
         ],
       ),
     );
