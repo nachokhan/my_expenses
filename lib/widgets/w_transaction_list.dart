@@ -4,20 +4,9 @@ import './w_transaction.dart';
 import '../models/transaction.dart';
 
 class WTransactionList extends StatelessWidget {
-  final List<Transaction> transactions = [
-    Transaction(
-      amount: 43.90,
-      date: DateTime.now(),
-      id: "1",
-      title: "Pan Casero",
-    ),
-    Transaction(
-      amount: 45,
-      date: DateTime.now(),
-      id: "2",
-      title: "Lechuga Casera",
-    )
-  ];
+  final List<Transaction> transactions;
+
+  WTransactionList(this.transactions);
 
   @override
   Widget build(BuildContext context) {
