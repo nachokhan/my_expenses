@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class WTransaction extends StatelessWidget {
   final String title;
-  final String amount;
-  final String date;
+  final double amount;
+  final DateTime date;
 
   WTransaction({
     @required this.amount,
@@ -26,7 +27,8 @@ class WTransaction extends StatelessWidget {
 }
 
 class WTitleDate extends StatelessWidget {
-  final String title, date;
+  final String title;
+  final DateTime date;
 
   WTitleDate(this.title, this.date);
 
@@ -44,7 +46,7 @@ class WTitleDate extends StatelessWidget {
             ),
           ),
           Text(
-            date,
+            DateFormat("d MMMM").format(date),
             style: TextStyle(
               fontSize: 16,
             ),

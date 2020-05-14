@@ -61,8 +61,8 @@ class MyHomePage extends StatelessWidget {
   getTransactions() {
     var list = transactions.map((tx) {
       return WTransaction(
-        amount: tx.amount.toString(),
-        date: "Hoy",
+        amount: tx.amount,
+        date: tx.date,
         title: tx.title,
       );
     }).toList();
