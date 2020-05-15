@@ -18,7 +18,7 @@ class WTransaction extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          WAmount("\$ $amount"),
+          WAmount("\$ ${amount.toStringAsFixed(2)}"),
           WTitleDate(title, date),
         ],
       ),
