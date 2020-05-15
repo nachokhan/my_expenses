@@ -10,6 +10,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'My Expenses',
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
+        accentColor: Colors.lightBlue,
+      ),
       home: MyHomePage(),
     );
   }
@@ -47,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: double.infinity,
               child: Card(
-                color: Colors.green,
+                color: Theme.of(context).accentColor,
                 child: Text("CHART"),
                 elevation: 5,
               ),

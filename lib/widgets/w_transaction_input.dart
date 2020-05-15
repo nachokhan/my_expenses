@@ -37,10 +37,10 @@ class _WTransactionInputState extends State<WTransactionInput> {
                   ),
                   FlatButton(
                       child: Text("Add Transaction"),
-                      textColor: Colors.purple,
+                      textColor: Theme.of(context).accentColor,
                       onPressed: () {
                         _addTransactionToList();
-                        FocusScope.of(context).unfocus();
+                        
                       }),
                 ],
               ),
@@ -56,5 +56,7 @@ class _WTransactionInputState extends State<WTransactionInput> {
     }
 
     widget.onTxAdded(title, amount);
+    //FocusScope.of(context).unfocus();
+    Navigator.of(context).pop();
   }
 }
