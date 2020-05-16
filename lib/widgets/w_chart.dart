@@ -25,14 +25,21 @@ class WChart extends StatelessWidget {
     List<Widget> bars = [];
 
     final amounts = ChartInfo().fillFromLastDays(txs, 7);
+    var totalAmount = 0.0;
 
     amounts.forEach((key, value) {
-      final dia = DateFormat.E().format(DateTime.now().subtract(Duration(days: key)));
+      totalAmount += value;
+    });
 
-      bars.add(WBar(dia, value));
+    amounts.forEach((key, value) {
+      final dia =
+          DateFormat.E().format(DateTime.now().subtract(Duration(days: key)));
+      final percentage = (value / totalAmount * 100).round();
+
+      bars.add(WBar(dia, percentage, value));
       bars.add(SizedBox(
-        width: 15,
-        height: 90,
+        width: 10,
+        height: 110,
       ));
     });
 
@@ -42,17 +49,47 @@ class WChart extends StatelessWidget {
 
 class WBar extends StatelessWidget {
   final String day;
+  final int percentage;
   final double amount;
+  double hBox1, hBox2;
+  final tHeight = 110;
+  final width = 35.0;
 
-  WBar(this.day, this.amount);
+  WBar(this.day, this.percentage, this.amount) {
+    hBox2 = (tHeight * (percentage) / 100);
+    hBox1 = tHeight - hBox2;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: <Widget>[
-          Text("\$"),
-          Text(amount.toString()),
+          SizedBox(
+            width: width,
+            height: hBox1,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(
+                    color: Colors.black,
+                    width: 1,
+                  )),
+            ),
+          ),
+          SizedBox(
+            width: width,
+            height: hBox2,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                  color: Colors.red,
+                  border: Border.all(
+                    color: Colors.black,
+                    width: 1,
+                  )),
+            ),
+          ),
+          Text('\$' + amount.toString()),
           Text(day),
         ],
       ),
