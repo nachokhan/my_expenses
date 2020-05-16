@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:my_expenses/widgets/w_chart.dart';
 import './models/transaction.dart';
 import './widgets/w_transaction_input.dart';
 import './widgets/w_transaction_list.dart';

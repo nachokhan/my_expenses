@@ -12,23 +12,36 @@ class WTransactionList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 550,
-      child: ListView.builder(
-        itemCount: transactions.length,
-        itemBuilder: (BuildContext ctx, int index) {
-          return Container(
-            child: getTransactionAt(index),
-          );
-        },
+      child: transactions.isEmpty
+          ? Column(
+              children: <Widget>[
+                Text("LALA"),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  height: 200,
+                  child: Image.asset("assets/images/agotado.png",
+                      fit: BoxFit.cover),
+                ),
+              ],
+            )
+          : ListView.builder(
+              itemCount: transactions.length,
+              itemBuilder: (BuildContext ctx, int index) {
+                return Container(
+                  child: getTransactionAt(index),
+                );
+              },
 
-      /*ALTERNATIVE to ListView.builder()
+              /*ALTERNATIVE to ListView.builder()
 
         child: ListView(        
         children: <Widget>[
            ...getTransactionsList(),
         ],
         */
-
-      ),
+            ),
     );
   }
 
