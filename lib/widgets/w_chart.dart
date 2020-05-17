@@ -11,12 +11,15 @@ class WChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(7),
+      margin: EdgeInsets.all(3),
       elevation: 6,
-      child: Row(
-        children: <Widget>[
-          ...createWeekDays(),
-        ],
+      child: Container(
+        margin: EdgeInsets.all(10),
+        child: Row(
+          children: <Widget>[
+            ...createWeekDays(),
+          ],
+        ),
       ),
     );
   }
@@ -53,7 +56,7 @@ class WBar extends StatelessWidget {
   final double amount;
   double hBox1, hBox2;
   final tHeight = 110;
-  final width = 35.0;
+  final width = 28.0;
 
   WBar(this.day, this.percentage, this.amount) {
     hBox2 = (tHeight * (percentage) / 100);
@@ -82,7 +85,7 @@ class WBar extends StatelessWidget {
             height: hBox2,
             child: DecoratedBox(
               decoration: BoxDecoration(
-                  color: Colors.red,
+                  color: Colors.green,
                   border: Border.all(
                     color: Colors.black,
                     width: 1,

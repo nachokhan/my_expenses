@@ -42,13 +42,13 @@ class WTitleDate extends StatelessWidget {
             title,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 18,
+              fontSize: 16,
             ),
           ),
           Text(
             DateFormat("d MMMM").format(date),
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 14,
             ),
           ),
         ],
@@ -65,15 +65,16 @@ class WAmount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(15),
+      width: 120,
+      padding: EdgeInsets.all(5),
       margin: EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 10,
+        horizontal: 5,
+        vertical: 5,
       ),
       decoration: BoxDecoration(
         border: Border.all(
           color: Theme.of(context).accentColor,
-          width: 3,
+          width: 2,
           style: BorderStyle.solid,
         ),
       ),
@@ -81,10 +82,10 @@ class WAmount extends StatelessWidget {
         amount,
         style: TextStyle(
           fontWeight: FontWeight.bold,
-          fontSize: 20,
+          fontSize: 18,
           color: Colors.black,
         ),
-        // textAlign: TextAlign.center,
+        textAlign: TextAlign.right,
       ),
     );
   }
