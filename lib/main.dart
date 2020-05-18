@@ -35,18 +35,12 @@ class _MyHomePageState extends State<MyHomePage> {
       title: "Pancito 1",
     ),
     Transaction(
-      amount: 5,
-      date: DateTime.now().subtract(Duration(days: 1)),
-      id: "1",
-      title: "Pancito 2",
-    ),
-    Transaction(
       amount: 20,
       date: DateTime.now().subtract(Duration(days: 2)),
       id: "1",
       title: "Pancito 3",
     ),
-    Transaction(
+ /*   Transaction(
       amount: 18,
       date: DateTime.now().subtract(Duration(days: 3)),
       id: "1",
@@ -81,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
       date: DateTime.now().subtract(Duration(days: 8)),
       id: "1",
       title: "Pancito 9",
-    ),
+    ),*/
 
   ];
 
