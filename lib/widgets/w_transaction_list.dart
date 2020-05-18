@@ -15,7 +15,7 @@ class WTransactionList extends StatelessWidget {
       child: transactions.isEmpty
           ? Column(
               children: <Widget>[
-                Text("LALA"),
+                Text("No transaction yet!"),
                 SizedBox(
                   height: 10,
                 ),
@@ -38,7 +38,7 @@ class WTransactionList extends StatelessWidget {
 
         child: ListView(        
         children: <Widget>[
-           ...getTransactionsList(),
+             ...getTransactionsList(),
         ],
         */
             ),

@@ -5,7 +5,7 @@ class WBar extends StatelessWidget {
   final int percentage;
   final double amount;
   final tHeight = 110.0;
-  final width = 33.0;
+  final width = 20.0;
 
   WBar(this.day, this.percentage, this.amount);
 
@@ -13,8 +13,8 @@ class WBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final hBox2 = (tHeight * (percentage) / 100);
     return Container(
-      child: Column(        
-        children: <Widget>[          
+      child: Column(
+        children: <Widget>[
           Stack(
             alignment: Alignment.bottomCenter,
             children: <Widget>[
@@ -22,10 +22,13 @@ class WBar extends StatelessWidget {
               _WBarPart(width, hBox2, Colors.green),
             ],
           ),
-          Text(
-            '\$ ${amount.toStringAsFixed(0)}',
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 12),
+          FittedBox
+          (fit: BoxFit.fitWidth,
+            child: Text(
+              '\$${amount.toStringAsFixed(0)}',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 12),
+            ),
           ),
           Text(
             day,

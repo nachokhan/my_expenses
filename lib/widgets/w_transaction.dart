@@ -72,6 +72,7 @@ class WAmount extends StatelessWidget {
         vertical: 5,
       ),
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
         border: Border.all(
           color: Theme.of(context).accentColor,
           width: 2,

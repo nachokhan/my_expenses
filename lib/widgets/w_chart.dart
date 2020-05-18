@@ -26,7 +26,9 @@ class WChart extends StatelessWidget {
               ),
             ),
             SizedBox(height: 5),
-            Row(children: <Widget>[...createWeekDays()]),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[...createWeekDays()]),
           ],
         ),
       ),
