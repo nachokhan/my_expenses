@@ -43,18 +43,20 @@ class WChart extends StatelessWidget {
       totalAmount += value;
     });
 
-    amounts.forEach((key, value) {
-      var currentDate = DateTime.now().subtract(Duration(days: key - 1));
+    for (int i = 0; i < 7; i++) {
+      final currentDate = DateTime.now().subtract(Duration(days: i));
 
       final dia = DateFormat.E().format(currentDate);
+      final value = amounts[currentDate.weekday];
 
       final percentage =
           totalAmount != 0 ? (value / totalAmount * 100).round() : 0;
 
-      bars.add(WBar(dia, percentage, value));
-      bars.add(SizedBox(width: 10, height: 110));
-    });
-
+      bars.add(Flexible(
+        fit: FlexFit.tight,
+        child: WBar(dia, percentage, value),
+      ));
+    }
     return bars;
   }
 }
