@@ -65,7 +65,7 @@ class WAmount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 120,
+      width: 110,
       padding: EdgeInsets.all(5),
       margin: EdgeInsets.symmetric(
         horizontal: 5,
@@ -82,7 +82,7 @@ class WAmount extends StatelessWidget {
         amount,
         style: TextStyle(
           fontWeight: FontWeight.bold,
-          fontSize: 18,
+          fontSize: 16,
           color: Colors.black,
         ),
         textAlign: TextAlign.right,
