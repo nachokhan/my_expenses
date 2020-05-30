@@ -17,10 +17,15 @@ class WTransaction extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          WAmount("\$ ${amount.toStringAsFixed(2)}"),
-          WTitleDate(title, date),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              WAmount("\$ ${amount.toStringAsFixed(2)}"),
+              WTitleDate(title, date),
+            ],
+          ),
           WDeleteIcon(onDeleteTx),
         ],
       ),
@@ -35,10 +40,11 @@ class WDeleteIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 45,
-      width: 200,
+      alignment: Alignment.centerRight,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(55), color: Colors.white),
       child: IconButton(
-        icon: Icon(Icons.delete),
+        icon: Icon(Icons.delete, color: Colors.red,),
         onPressed: onPressed,
       ),
     );
