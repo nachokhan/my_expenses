@@ -27,7 +27,50 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<Transaction> transactions = [];
+  final List<Transaction> transactions = [
+	Transaction(
+      amount: 45,
+      date: DateTime.now().subtract(Duration(days: 1)),
+      id: "1",
+      title: "Shoes",
+    ),
+		Transaction(
+      amount: 110,
+      date: DateTime.now().subtract(Duration(days: 2)),
+      id: "2",
+      title: "Bike Components",
+    ),
+		Transaction(
+      amount: 2500,
+      date: DateTime.now().subtract(Duration(days: 2)),
+      id: "3",
+      title: "New Bike Spec",
+    ),
+		Transaction(
+      amount: 8,
+      date: DateTime.now().subtract(Duration(days: 3)),
+      id: "4",
+      title: "School Utils",
+    ),
+		Transaction(
+      amount: 70,
+      date: DateTime.now().subtract(Duration(days: 3)),
+      id: "5",
+      title: "Sport TShirt",
+    ),
+		Transaction(
+      amount: 15,
+      date: DateTime.now().subtract(Duration(days: 3)),
+      id: "6",
+      title: "Food & Drinks",
+    ),
+		Transaction(
+      amount: 36,
+      date: DateTime.now().subtract(Duration(days: 4)),
+      id: "7",
+      title: "Mate Kit",
+    ),
+	];
 
   @override
   Widget build(BuildContext context) {
