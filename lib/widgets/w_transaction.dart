@@ -47,9 +47,7 @@ class WTitleDate extends StatelessWidget {
           ),
           Text(
             DateFormat("d MMMM").format(date),
-            style: TextStyle(
-              fontSize: 14,
-            ),
+            style: TextStyle(fontSize: 14, fontStyle: FontStyle.italic),
           ),
         ],
       ),
