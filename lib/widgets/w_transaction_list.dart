@@ -5,8 +5,9 @@ import '../models/transaction.dart';
 
 class WTransactionList extends StatelessWidget {
   final List<Transaction> transactions;
+  final Function onDeleteItem;
 
-  WTransactionList(this.transactions);
+  WTransactionList(this.transactions, this.onDeleteItem);
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +56,10 @@ class WTransactionList extends StatelessWidget {
         amount: transactions[index].amount,
         date: transactions[index].date,
         title: transactions[index].title,
+        onDeleteTx: () {
+          transactions.removeAt(index);
+          onDeleteItem();
+        },
       ),
     );
   }
@@ -68,6 +73,10 @@ class WTransactionList extends StatelessWidget {
         amount: tx.amount,
         date: tx.date,
         title: tx.title,
+        onDeleteTx: () {
+          transactions.remove(tx);
+          onDeleteItem();
+        },
       );
     }).toList();
     return list;

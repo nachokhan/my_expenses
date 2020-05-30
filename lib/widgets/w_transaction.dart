@@ -5,12 +5,13 @@ class WTransaction extends StatelessWidget {
   final String title;
   final double amount;
   final DateTime date;
+  final Function onDeleteTx;
 
-  WTransaction({
-    @required this.amount,
-    @required this.date,
-    @required this.title,
-  });
+  WTransaction(
+      {@required this.amount,
+      @required this.date,
+      @required this.title,
+      @required this.onDeleteTx});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,25 @@ class WTransaction extends StatelessWidget {
         children: <Widget>[
           WAmount("\$ ${amount.toStringAsFixed(2)}"),
           WTitleDate(title, date),
+          WDeleteIcon(onDeleteTx),
         ],
+      ),
+    );
+  }
+}
+
+class WDeleteIcon extends StatelessWidget {
+  final Function onPressed;
+  WDeleteIcon(this.onPressed);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 45,
+      width: 200,
+      child: IconButton(
+        icon: Icon(Icons.delete),
+        onPressed: onPressed,
       ),
     );
   }

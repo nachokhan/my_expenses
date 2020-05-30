@@ -54,7 +54,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 elevation: 5,
               ),
             ),
-            WTransactionList(transactions),
+            WTransactionList(transactions, () {
+              setState(() {});
+            }),
           ],
         ),
       ),
